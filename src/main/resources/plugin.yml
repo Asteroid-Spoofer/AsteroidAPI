@@ -1,0 +1,3 @@
+name: AsteroidAPI
+version: '${version}'
+main: me.serbob.asteroidapi.AsteroidAPI
