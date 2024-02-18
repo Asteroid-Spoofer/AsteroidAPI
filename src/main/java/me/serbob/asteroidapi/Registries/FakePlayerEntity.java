@@ -56,6 +56,14 @@ public interface FakePlayerEntity {
      * @return The CraftPlayer object representing the fake player.
      */
     Object getCraftPlayer();
+
+    /**
+     * Gets the actual NMS ServerPlayer object associated with the fake player.
+     *
+     * @return The NMS ServerPlayer object representing the NMS fake player.
+     */
+    Object getServerPlayer();
+
     /**
      * Gets the movement handler for the fake player.
      *
