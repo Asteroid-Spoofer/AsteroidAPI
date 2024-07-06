@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AsteroidAPI.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AsteroidAPI.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.serbob.AsteroidAPI.main.iml" filepath="$PROJECT_DIR$/.idea/modules/me.serbob.AsteroidAPI.main.iml" />
     </modules>
   </component>
 </project>

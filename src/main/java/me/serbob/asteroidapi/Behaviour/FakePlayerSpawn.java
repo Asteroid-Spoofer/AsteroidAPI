@@ -1,7 +1,6 @@
 package me.serbob.asteroidapi.Behaviour;
 
 import me.serbob.asteroidapi.Registries.FakePlayerEntity;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**

@@ -1,9 +1,10 @@
 package me.serbob.asteroidapi.Registries;
 
-import me.serbob.asteroidapi.Handlers.TargetHandler;
 import me.serbob.asteroidapi.Interfaces.DestroyBlock;
 import me.serbob.asteroidapi.Interfaces.Movement;
+import me.serbob.asteroidapi.Interfaces.Overrides;
 import me.serbob.asteroidapi.Interfaces.Target;
+import me.serbob.asteroidapi.injection.Features;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
@@ -64,6 +65,11 @@ public interface FakePlayerEntity {
      */
     Object getServerPlayer();
 
+    Object getNavigation();
+    Object getLookController();
+
+    Overrides getOverrides();
+
     /**
      * Gets the movement handler for the fake player.
      *
@@ -84,4 +90,11 @@ public interface FakePlayerEntity {
      * @return The block destruction handler.
      */
     DestroyBlock getDestroyBlock();
+
+    /**
+     * Gets the features associated with the fake player.
+     *
+     * @return The features associated with the fake player.
+     */
+    Features features();
 }

@@ -1,5 +1,6 @@
 package me.serbob.asteroidapi.Scheduler;
 
+import me.serbob.asteroidapi.task.Task;
 import org.bukkit.Bukkit;
 
 import java.util.LinkedList;
@@ -25,14 +26,14 @@ public class Schedule {
     /**
      * Map to store UUIDs and their associated task IDs.
      */
-    private static final Map<UUID, List<Integer>> taskIdMap = new ConcurrentHashMap<>();
+    private static final Map<UUID, List<Task>> taskIdMap = new ConcurrentHashMap<>();
 
     /**
      * Gets the mapping of UUIDs to their associated task IDs.
      *
      * @return The map containing UUIDs and their associated task IDs.
      */
-    public Map<UUID, List<Integer>> getTaskIdMap() {
+    public Map<UUID, List<Task>> getTaskIdMap() {
         return taskIdMap;
     }
 
@@ -40,22 +41,22 @@ public class Schedule {
      * Adds a task ID to the list associated with a specific UUID.
      *
      * @param uuid    The UUID of the player.
-     * @param taskId  The task ID to be added.
+     * @param task  The task ID to be added.
      */
-    public void addTaskToUuid(UUID uuid, int taskId) {
-        taskIdMap.computeIfAbsent(uuid, k -> new LinkedList<>()).add(taskId);
+    public void addTaskToUuid(UUID uuid, Task task) {
+        taskIdMap.computeIfAbsent(uuid, k -> new LinkedList<>()).add(task);
     }
 
     /**
      * Removes a task ID from the list associated with a specific UUID.
      *
      * @param uuid    The UUID of the player.
-     * @param taskId  The task ID to be removed.
+     * @param task  The task ID to be removed.
      */
-    public void removeTaskFromUuid(UUID uuid, int taskId) {
-        List<Integer> taskList = taskIdMap.get(uuid);
+    public void removeTaskFromUuid(UUID uuid, Task task) {
+        List<Task> taskList = taskIdMap.get(uuid);
         if (taskList != null && !taskList.isEmpty()) {
-            taskList.remove(Integer.valueOf(taskId));
+            taskList.remove(task);
         }
     }
 
@@ -65,10 +66,10 @@ public class Schedule {
      * @param uuid  The UUID of the player.
      */
     public void cancelAllTasks(UUID uuid) {
-        List<Integer> taskList = taskIdMap.get(uuid);
+        List<Task> taskList = taskIdMap.get(uuid);
         if (taskList != null && !taskList.isEmpty()) {
-            for (Integer taskId : taskList) {
-                Bukkit.getScheduler().cancelTask(taskId);
+            for (Task task : taskList) {
+                task.cancel();
             }
         }
     }
@@ -79,10 +80,10 @@ public class Schedule {
      * @param uuid  The UUID of the player.
      */
     public void cancelAndDeleteAllTasks(UUID uuid) {
-        List<Integer> taskList = taskIdMap.get(uuid);
+        List<Task> taskList = taskIdMap.get(uuid);
         if (taskList != null && !taskList.isEmpty()) {
-            for (Integer taskId : taskList) {
-                Bukkit.getScheduler().cancelTask(taskId);
+            for (Task task : taskList) {
+                task.cancel();
             }
             taskIdMap.remove(uuid);
         }
