@@ -1,9 +1,6 @@
 package me.serbob.asteroidapi.Registries;
 
-import me.serbob.asteroidapi.Interfaces.DestroyBlock;
-import me.serbob.asteroidapi.Interfaces.Movement;
-import me.serbob.asteroidapi.Interfaces.Overrides;
-import me.serbob.asteroidapi.Interfaces.Target;
+import me.serbob.asteroidapi.Interfaces.*;
 import me.serbob.asteroidapi.injection.Features;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
@@ -25,6 +22,7 @@ public interface FakePlayerEntity {
 
     /**
      * Moves the fake player to the specified vector after transforming it as a Vec3D.
+     * No pathfinding involved
      *
      * @param vector The vector representing the movement.
      */
@@ -51,6 +49,8 @@ public interface FakePlayerEntity {
      */
     Player getEntityPlayer();
 
+    void setPing(int ping);
+
     /**
      * Gets the CraftPlayer object associated with the fake player.
      *
@@ -65,7 +65,10 @@ public interface FakePlayerEntity {
      */
     Object getServerPlayer();
 
-    Object getNavigation();
+    Navigation getNavigation();
+
+    FakePlayerInventory getFakeInventory();
+
     Object getLookController();
 
     Overrides getOverrides();

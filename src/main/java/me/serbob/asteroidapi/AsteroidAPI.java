@@ -1,15 +1,22 @@
 package me.serbob.asteroidapi;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import lombok.Getter;
+import lombok.Setter;
+import me.serbob.asteroidapi.Handlers.SpoofHandlerAPI;
 
-public final class AsteroidAPI extends JavaPlugin {
-
-    @Override
-    public void onEnable() {
-        System.out.println("Asteroid API Has loaded!");
+@Setter
+@Getter
+public final class AsteroidAPI {
+    private static class LazyHolder {
+        static AsteroidAPI INSTANCE = new AsteroidAPI();
     }
 
-    @Override
-    public void onDisable() {
+    public static AsteroidAPI getInstance() {
+        return LazyHolder.INSTANCE;
     }
+
+    private AsteroidAPI() {}
+
+    private SpoofHandlerAPI spoofHandlerAPI;
+    private boolean disableSpoofHandlerTick;
 }

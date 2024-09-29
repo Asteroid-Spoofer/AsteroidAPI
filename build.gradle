@@ -7,6 +7,7 @@ version = '1.0.2'
 
 repositories {
     mavenCentral()
+    mavenLocal()
     maven {
         name = "spigotmc-repo"
         url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
@@ -19,6 +20,13 @@ repositories {
 
 dependencies {
     compileOnly "org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT"
+
+    compileOnly 'com.mojang:authlib:5.0.47'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 }
 
 def targetJavaVersion = 8
