@@ -24,6 +24,11 @@ public interface Movement {
     void jump();
 
     /**
+     * Initiates a jump action without checking if the player is on ground or not.
+     */
+    void forceJump();
+
+    /**
      * Stops the entity's movement.
      */
     void stopMovement();

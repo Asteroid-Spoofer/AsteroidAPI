@@ -1,6 +1,6 @@
 package me.serbob.asteroidapi.Behaviour;
 
-import org.bukkit.entity.Player;
+import me.serbob.asteroidapi.Registries.FakePlayerEntity;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -11,9 +11,9 @@ public interface FakePlayerTick {
     /**
      * Called on each server tick for individual fake players.
      *
-     * @param player      The fake player to perform actions on.
+     * @param fakePlayer      The fake player to perform actions on.
      * @param javaPlugin  The JavaPlugin instance responsible for the tick.
      */
-    void individualPlayerTick(Player player, JavaPlugin javaPlugin);
+    void individualPlayerTick(FakePlayerEntity fakePlayer, JavaPlugin javaPlugin);
 }
 
