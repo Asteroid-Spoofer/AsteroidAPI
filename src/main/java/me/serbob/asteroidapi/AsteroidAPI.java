@@ -2,7 +2,7 @@ package me.serbob.asteroidapi;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.serbob.asteroidapi.Handlers.SpoofHandlerAPI;
+import me.serbob.asteroidapi.handlers.SpoofHandlerAPI;
 
 @Setter
 @Getter
