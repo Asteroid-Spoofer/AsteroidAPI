@@ -1,5 +1,6 @@
 package me.serbob.asteroidapi.registries;
 
+import me.serbob.asteroidapi.handlers.FBrain;
 import me.serbob.asteroidapi.interfaces.*;
 import me.serbob.asteroidapi.injection.Features;
 import org.bukkit.entity.Player;
@@ -12,7 +13,6 @@ import java.util.UUID;
  * Represents an interface for defining fake player behavior.
  */
 public interface FakePlayerEntity {
-
     /**
      * Spawns a fake player using NMS (net.minecraft.server) implementation.
      *
@@ -65,11 +65,16 @@ public interface FakePlayerEntity {
      */
     Object getServerPlayer();
 
-    Navigation getNavigation();
+    /*
+     * This allows you to use actions
+     */
+    FBrain getFBrain();
+
+    INavigation getNavigation();
 
     FakePlayerInventory getFakeInventory();
 
-    Object getLookController();
+    ILookController getLookController();
 
     Overrides getOverrides();
 
@@ -85,7 +90,7 @@ public interface FakePlayerEntity {
      *
      * @return The target handler.
      */
-    Target getTarget();
+    ITargetCore getTargetCore();
 
     /**
      * Gets the block destruction handler for the fake player.

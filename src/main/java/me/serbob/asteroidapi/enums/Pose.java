@@ -1,19 +1,44 @@
 package me.serbob.asteroidapi.enums;
 
 public enum Pose {
-    /**The default NPC pose (standing).*/
+    /**
+     * Default standing position with full height
+     */
     STANDING(1F),
-    /**Sneaking/crouching.*/
+
+    /**
+     * Crouching position with reduced height (0.5 blocks)
+     */
     SNEAKING(0.5F),
-    /**Lying down on back.*/
+
+    /**
+     * Horizontal position with minimal height
+     * Used when sleeping in beds
+     */
     SLEEPING(0F),
-    /**Lying down on front - breaststroke animation.*/
+
+    /**
+     * Swimming position with full height
+     * Used while swimming or in water
+     */
     SWIMMING(1F),
-    /**Lying down on front.*/
+
+    /**
+     * Flying position with full height
+     * Used when gliding with elytra
+     */
     FLYING(1F),
-    /**Trident spinning animation.*/
+
+    /**
+     * Special animation pose with full height
+     * Used when throwing tridents
+     */
     SPINNING(1F),
-    /**Fall over sideways pose (red overlay).*/
+
+    /**
+     * Death animation pose with minimal height
+     * Used when player dies or takes fatal damage
+     */
     DYING(0F);
 
     private final float speedModifier;

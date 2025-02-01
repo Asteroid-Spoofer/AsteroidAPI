@@ -17,6 +17,9 @@ public final class AsteroidAPI {
 
     private AsteroidAPI() {}
 
+    /*
+     * Spoof Handler
+     */
     private SpoofHandlerAPI spoofHandlerAPI;
     private boolean disableSpoofHandlerTick;
 }
