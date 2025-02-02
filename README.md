@@ -19,7 +19,7 @@ A powerful and flexible API for Minecraft plugin development.
 
 2. Make your changes and commit them:
    ```bash
-   git add.
+   git add .
    git commit -m Descriptive commit message
    ```
 3. Push your branch
@@ -33,6 +33,8 @@ A powerful and flexible API for Minecraft plugin development.
 # Installation
 <details>
 <summary>Gradle</summary>
+
+```gradle
 repositories {
   maven { url 'https://jitpack.io' }
 }
@@ -40,9 +42,13 @@ repositories {
 dependencies {
   implementation 'com.github.Asteroid-Spoofer:AsteroidAPI:Tag'
 }
+```
 </details>
+
 <details>
 <summary>Maven</summary>
+
+```xml
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -55,19 +61,20 @@ dependencies {
     <artifactId>AsteroidAPI</artifactId>
     <version>Tag</version>
 </dependency>
+```
 </details>
 
 # Contributing
-Fork the repository
-Follow the development workflow above
-Keep code clean and documented
-Test your changes thoroughly
-Update documentation if needed
+- Fork the repository
+- Follow the development workflow above
+- Keep code clean and documented
+- Test your changes thoroughly
+- Update documentation if needed
 
 # Branch Naming Convention
-Features: feature/feature-name
-Bug fixes: fix/bug-name
-Documentation: docs/what-changed
+- Features: `feature/feature-name`
+- Bug fixes: `fix/bug-name`
+- Documentation: `docs/what-changed`
 
 # Support
 For issues or suggestions, please use GitHub's issue tracker.
