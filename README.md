@@ -2,6 +2,13 @@
 
 [![](https://jitpack.io/v/Asteroid-Spoofer/AsteroidAPI.svg)](https://jitpack.io/#Asteroid-Spoofer/AsteroidAPI)
 
+## What can you create with this API?
+- Custom extension commands (Check AsteroidCommand & AsteroidCommandManager)
+- Custom actions (fighting, following, anything you can think of, u just gotta code it)
+- Basic movement or pathfinding
+- Custom optimized fake player spawn & tick methods
+- And a lot more...
+
 ## Overview
 A powerful and flexible API for Minecraft plugin development.
 
