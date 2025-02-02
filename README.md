@@ -1,6 +1,6 @@
 # AsteroidAPI
 
-[![](https://jitpack.io/v/SerbanHiro/AsteroidAPI.svg)](https://jitpack.io/#SerbanHiro/AsteroidAPI)
+[![](https://jitpack.io/v/Asteroid-Spoofer/AsteroidAPI.svg)](https://jitpack.io/#Asteroid-Spoofer/AsteroidAPI)
 
 ## Overview
 A powerful and flexible API for Minecraft plugin development.
