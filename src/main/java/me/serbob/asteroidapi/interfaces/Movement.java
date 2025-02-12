@@ -29,9 +29,16 @@ public interface Movement {
     void forceJump();
 
     /**
-     * Stops the entity's movement.
+     * Stops the entity's movement with moonwalk.
+     * This is used so that the stop inside PathingAction looks smooth.
      */
     void stopMovement();
+
+    /**
+     * Stops the entity's movement with no moonwalk.
+     * This is used when the movement should be COMPLETELY stopped.
+     */
+    void fullStop();
 
     /**
      * Gets the target X-coordinate for movement.
