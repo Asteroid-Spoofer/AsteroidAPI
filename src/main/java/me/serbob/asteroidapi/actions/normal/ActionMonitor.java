@@ -7,6 +7,7 @@ import me.serbob.asteroidapi.actions.util.Result;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
 public class ActionMonitor {
     private final Action action;
     private final List<StateChange> stateHistory = new ArrayList<>();
