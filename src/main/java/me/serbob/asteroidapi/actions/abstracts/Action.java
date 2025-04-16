@@ -82,8 +82,12 @@ public abstract class Action implements Comparable<Action> {
 
     public void internalUpdate() {
         if (childAction != null) {
-            childAction.internalUpdate();
-            childAction.onUpdate();
+            Action child = childAction;
+            child.internalUpdate();
+
+            if (childAction != null) {
+                childAction.onUpdate();
+            }
         }
 
         currentDuration++;
