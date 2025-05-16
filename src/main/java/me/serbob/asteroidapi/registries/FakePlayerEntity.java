@@ -21,6 +21,11 @@ public interface FakePlayerEntity {
     void spawnFakePlayerNMS(Map<UUID, Object> fakePlayers);
 
     /**
+     * Disconnects a fake player through paper's internal async disconnect method
+     */
+    void disconnectAsync();
+
+    /**
      * Moves the fake player to the specified vector after transforming it as a Vec3D.
      * No pathfinding involved
      *
